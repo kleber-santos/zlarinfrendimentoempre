@@ -1,0 +1,26 @@
+<mvc:View controllerName="whr.com.br.ZLARInfRendimentoEmpre.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="Informe de Rendimento" showFooter="true" showNavButton="true">
+		<content>
+			<l:VerticalLayout width="100%">
+				<fb:FilterBar reset="onReset" showRestoreButton="false" showClearButton="false" showFilterConfiguration="false" search="onPesquisar" searchEnabled="true" showGoOnFB="true">
+					<fb:filterItems>
+						<fb:FilterItem name="A" label="Ano ">
+							<fb:control>
+								<ComboBox xmlns:sap.ui.core="sap.ui.core" ariaLabelledBy="__xmlview0--unitNumberColumnTitle" items="{/MC_ANOSet}"
+								selectedKey="{anoModel>/Ano}" id="comboAno" width="60px" selectionChange="onchangeComboAno" >
+									<items>
+										<sap.ui.core:ListItem key="00" text="" enabled="true"/>
+										<sap.ui.core:ListItem key="{Ano}" text="{Ano}" enabled="true"/>
+									</items>
+								</ComboBox>
+							</fb:control>
+						</fb:FilterItem>
+					</fb:filterItems>
+				</fb:FilterBar>
+			</l:VerticalLayout>
+			<core:HTML id="idFrame" />
+		</content>
+		
+	</Page>
+</mvc:View>
